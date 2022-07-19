@@ -48,5 +48,6 @@ public class GitTest {
 		for(int i : bubble) {
 			System.out.print(i+" ");
 		}
+		
 	}//main of end
 }//class of end
