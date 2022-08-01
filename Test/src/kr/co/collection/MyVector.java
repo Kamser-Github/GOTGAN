@@ -169,5 +169,10 @@ public class MyVector implements List{
 	public ListIterator listIterator(int index) {return null;}
 	public ListIterator listIterator() {return null;}
 	public List subList(int fromIndex,int toIndex) {return null;}
+	@Override
+	public String toString() {
+		
+		return this.getClass().getName()+"@"+Integer.toHexString(hashCode());
+	}
 	
 }
