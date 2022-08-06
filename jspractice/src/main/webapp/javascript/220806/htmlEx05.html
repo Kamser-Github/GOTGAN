@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+(1) 구현 함수
+
+     printObject(p)
+     - 매개변수로 객체타입이 왔는지 채크하고 객체 타입이 아니면 그냥 리턴한다.
+     - 아규먼트로 전달된 객체에서 tag 속성값, color 속성값 그리고 msg 속성값을 
+       추출하여 추출된 태그와 칼라 그리고 메시지를 적용하여 도큐먼트 영역에 출력한다.
+
+(2) 함수 호출 구현
+     -  printObject(p) 함수를 다 섯번 호출하는 기능을 구현한다.
+     - 호출할 때마다 다른 내용의 객체를 생성해서 전달한다.
+     - 객체 생성시에는 객체 리터럴 방식으로 하며
+        tag 속성 ---> HTML 태그 정보 저장
+        color 속성  ---> 칼라값 저장
+        msg 속성  ---> 출력 메시지 저장
+        으로 구성되는 자바스크립트 객체를 생성하며 각 속성들의 값은 
+        임의로 정한다. 
+*/
+//객체 리터럴로 만들기
+const Person = {
+        		
+        		tags : ["h1","button","strong","s","p"],
+        		colors : ["red","blue","black","pink","yellow"],
+        		msgs : ["믿음","소망","사랑","월급","로또"],
+        		
+        		get tag() {
+        			let ran = Math.floor(Math.random()*this.tags.length);
+        			return this.tags[ran];
+        		},
+        
+        		get color(){
+        			let ran2 = Math.floor(Math.random()*this.colors.length);
+        			return this.colors[ran2];
+        		},
+        		get msg(){
+        			let ran3 = Math.floor(Math.random()*this.msgs.length);
+        			return this.msgs[ran3];
+        		},
+        		
+        		set tag(value){
+        			if(typeof value != 'string')
+        				return;
+        			this.tags[this.tags.length] = value;
+        		},
+        		set color(value){
+        			if(typeof value != 'string')
+        				return;
+        			this.colors[this.tags.length] = value;
+        		},
+        		set msg(value){
+        			if(typeof value != 'string')
+        				return;
+        			this.msgs[this.tags.length] = value;
+        		}
+        		
+        		//재미로 get을 만든건데 set도 만들어보고 싶다.
+        }
+
+function printObject(p){
+        	if(typeof p != 'object')
+        		return;
+        	document.write("<"+p.tag+" style = 'Color : "+p.color+"'>"+p.msg+"</"+p.tag+">");
+        }
+
+for(let i=0 ; i<5 ; i++){
+	printObject(Person);
+}
+        
+</script>
+</html>
