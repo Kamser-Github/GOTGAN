@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+</body>
+<script>
+/*
+1.	다음 기능을 처리하는 함수 sum()를 구현해 본다.
+	매개변수를 한 개 선언한다.
+	매개변수에 아무값도 전달되지 않으면 리턴값 없이 리턴한다.
+	1 부터 매개변수에 전달된 숫자값 까지 합을 구하여 리턴한다.
+2.	0부터 5사이의 난수를 하나 추출하여 아규먼트로 전달하면서 sum() 함수를 호출하는데
+	0이 추출된 경우에는 아규먼트 없이 호출한다.
+	호출한 다음 
+	리턴값이 있으면 다음 형식으로 브라우저의 도큐먼트 영역 <h2> 태그와 함께 출력하고
+	호출 결과값 : XX
+    리턴값이 없으면 다음과 같이 브라우저의 도큐먼트 영역에 <h3> 태그와 함께 출력한다.
+	결과값이 없어요!!	      
+    이 과정을 5번 반복한다.
+*/
+
+//sum 함수 생성
+function sum(number){
+    let sum = 0;
+    if(typeof number == 'undefined')
+    	return;
+    for(let i=1 ; i<=number ; i++){
+    	sum+=i;
+    }
+    return sum;
+}
+function randomNumber(){
+	return Math.floor(Math.random()*6);
+}
+function printSum(){
+	//랜덤번호 추출
+	let ran = randomNumber();
+	
+	if(ran){
+		document.write("<h2>호출 결과값 : "+sum(ran)+"</h2>");
+	}
+	else{
+		document.write("<h3>결과 값이 없어요</h3>");
+	}
+}
+for(let i=0 ; i<5 ; i++){
+	printSum();
+}
+
+/*
+
+다시 보니 위랑 아래랑 별 차이가 없는듯 하다.
+위에는 번호 뽑는걸 함수로 정의했고
+아래는 검사하는걸 함수로 정의했다.
+둘다 했어야하는게 맞는듯하다.
+
+매서드는 하나의 역할만 해야한다.
+
+function sum(number){
+	let count = 0;
+	if(Number.parseInt(number)>0){
+		for(let i=1 ; i<=number ; i++){
+			count+=i;
+		}
+		return count;
+	}
+}
+		
+function check(result){
+	if(result){
+		document.write("<h2>호출 결과값 : "+result+"</h2>");
+	}
+	else{
+		document.write("<h3>결과 값이 없어요</h3>");
+	}
+}
+		
+let randomNumber = 0;
+for(let i=0 ; i<5 ; i++){
+	randomNumber = Math.random()*6;
+	check(sum(randomNumber));
+}
+
+*/
+</script>
+</html>
