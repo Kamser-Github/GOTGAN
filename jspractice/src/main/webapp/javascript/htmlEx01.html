@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바 스크립트 실습(1)</h1>
+</body>
+<script>
+/*
+(1) 웹 페이지의 제목을 <h1> 태그와 함께 "자바스크립트 실습(1)" 이라고 출력한다.
+(2) window.prompt() 를 사용해서 사용자로 부터 숫자를 입력 받는다.
+(3) 입력된 숫자는 자바스크립트 콘솔창에 출력한다.
+(4) 1부터 이 숫자까지의 값을 더해서 브라우저의 도큐먼트 영역에 <h2> 태그와 함께 출력한다.
+    "1부터 xx 까지의 합은 xxxx 입니다."
+(5) 입력된 데이터가 숫자가 아니거나, null 거나, "" 이면  "잘못된 입력" 이라는 메시지를
+     브라우저의 도큐먼트 영역에 <h3> 태그와 함께 출력한다.
+ */
+	let number = window.prompt("번호를 입력해주세요");
+     /*
+	console.log(Number.parseInt(number));
+	function sumNumber(number){
+		//"1234"같은 string이지만 숫자로 구분할수있으면
+		// 받아서 더해주는게 맞는거같다.
+		// 조건에서 숫자만 입력한걸 더하라고 했으니 확실하게 구분해야겠다.
+		if (!Number.parseInt(number)){
+			document.write("<h3>잘못된 입력</h3>");
+			return;
+		}
+		else {
+			let sum = 0;
+			for(let i=1 ; i<=number ; i++){
+				sum+=i;
+			}
+			return sum;
+		}
+	}
+	function printResult(result){
+		if(typeof result != 'number')
+			document.write("<h3>잘못된 입력</h3>");
+		else{
+			document.write("<h2>잘못된 입력</h2>");
+		}
+	}
+	*/
+	function isNumber(num){
+		console.log(num);
+		if(!Number.parseInt(num)){
+			document.write("<h2>잘못된 입력</h2>")
+			return false;
+		}
+		else return true;
+	}
+	function sumNumber(num){
+		let sum = 0;
+		if(isNumber(num)){
+			for(let i=1 ; i<=num ; i++){
+				sum+=i;
+			}
+			printResult(num,sum);
+		}
+		
+	}
+	function printResult(num,result){
+		document.write("<h2>1부터 "+num+"까지 합은"+result+"입니다</h2>");
+	}
+	sumNumber(number);
+	
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1>자바스크립트 실습(2)</h1>
+	<hr>
+
+</body>
+
+<script>
+/*
+(1) 웹 페이지의 제목을 <h1> 태그와 함께 "자바스크립트 실습(2)" 이라고 출력한다.
+(2) 다음 값들을 저장하여 배열을 생성한다.
+   	10, 5, 7,21, 4, 8, 18
+(3) foreach 문을 이용해서 모든 원소들의 값을 더하여 다음 형식으로 HTML의 
+    두 번째 제목 태그(<h2>)로 출력한다.
+      모든 원소의 합 : XX
+(4) 최대값과 최소값, 짝수의 갯수 그리고 홀수의 갯수를 구해서 
+	순서없는 리스트 형식(<ul>)으로 출력한다.
+    -	최대값 : XX
+    - 최소값 : XX
+    - 짝수의 갯수 : XX 
+    - 홀수의 갯수 : XX 
+(5) <h1> 태그의 텍스트는 파란색으로, <h2> 태그의 텍스트는 빨간색으로 출력한다. 
+
+
+*/
+
+const numbers = [10,5,7,21,4,8,18];
+
+//출력 포멧 만들기
+function writeFormat(string,result,tag ='ul'){
+	document.write("<"+tag+">"+string+result+"</"+tag+">");
+}
+//변수 선언
+let sum = 0;
+let max = 0;
+let min = numbers[0];
+let evenCount = 0;
+let oddCount = 0;
+
+//계산
+numbers.forEach( (e)=> sum+=e );
+numbers.forEach( (e)=> max<e ? max=e : max);
+numbers.forEach( (e)=> min>e ? min=e : min);
+numbers.forEach( (e)=> (e%2==0)? evenCount++ : oddCount++);
+
+//출력
+writeFormat("모든 원소의 합 : ",sum,"h2");
+writeFormat("최대값 : ",max);
+writeFormat("최소값 : ",min);
+writeFormat("짝수의 개수 : ",evenCount);
+writeFormat("홀수의 개수 : ",oddCount);
+
+/*
+
+위가 forEach문을 공부하고 다시 작성한것.
+확실히 간단한 계산은 forEach문이 간결하고 보기가 좋다.
+
+
+변수 선언및 배열 초기화
+
+let sum,max,min,evenNumber,oddNumber;
+let numberArray = [10,5,7,21,4,8,18];
+const LENGTH = numberArray.length;
+			
+//총합
+sum = 0;
+for(let i=0 ; i<LENGTH ; i++){
+	sum+=numberArray[i];
+}
+			
+//최대값
+max = numberArray[0];
+for(let i=1 ; i<LENGTH ; i++){
+	if(max<numberArray[i])
+	max=numberArray[i];
+}
+			
+//최소값
+min = numberArray[0];
+for(let i=1 ; i<LENGTH ; i++){
+	if(min>numberArray[i])
+	min=numberArray[i];
+}
+//홀짝개수
+evenNumber = 0;
+oddNumber = 0;
+for(let i=0 ; i<LENGTH ; i++){
+	switch(numberArray[i]%2){
+	case 0 :
+		++evenNumber;
+		break;
+	default :		
+		++oddNumber;
+	}
+}
+		
+//출력
+document.write("<h2>모든 원소의 합 : "+sum+"</h2>");
+document.write("<ul>");
+document.write("<li>최대값 :"+max+"</li>");
+document.write("<li>최소값 :"+min+"</li>");
+document.write("<li>짝수의 개수 :"+evenNumber+"</li>");
+document.write("<li>홀수의 개수 :"+oddNumber+"</li>");
+document.write("</ul>");
+*/
+</script>
+</html>
