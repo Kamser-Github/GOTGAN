@@ -63,7 +63,7 @@ function firmCheck(locate,siteName){
 매개변수를 넣는거지 변수명을 넣는게 아니였는데 실수를 했다.
 
 */
-
+/*
 function SiteName(num){
 	switch(num){
 	case 1: return "네이버";
@@ -91,6 +91,46 @@ let number = randomNumber(3);
 let name = SiteName(number);
 let site = SiteLocation(number);
 firmCheck(site,name);
+*/
 //만들고 보니 괜히 나눈거 같기도 하다..
+//생각해보니까 반환할때 배열로 반환하면 된다.
+
+function randomSite(num){
+	
+	let site = new Array(2);
+	
+	switch(num){
+	case 1:
+		site[0] = "네이버";
+		site[1] = "https://www.naver.com/";
+		break;
+	case 2:
+		site[0] = "다음";
+		site[1] = "https://www.daum.net/";
+		break;
+	default :
+		site[0] = "구글";
+		site[1] = "https://www.google.co.kr/";
+	}
+	
+	return site;
+}
+function firmCheck(arr){
+	if(window.confirm(arr[0]+"으로 이동하시겠습니까?"))
+		location.href = arr[1];
+	else
+		location.href = "https://www.w3schools.com/";
+}
+function randomNumber(range){
+	return Math.floor(Math.random()*range)+1;
+}
+/*
+let random = randomNumber(3);
+let site = randomSite(random);
+firmCheck(site);
+*/
+//한줄로도 가능한데 지저분해보인다.
+firmCheck(randomSite(randomNumber(3)));
+
 </script>
 </html>
