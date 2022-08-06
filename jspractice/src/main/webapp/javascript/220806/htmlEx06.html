@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>표준,고전,인라인 다 연습해보기</h1>
+	<hr>
+	
+	<h2>인라인 이벤트 모델</h2>
+	<button onclick = "weather('sun');">맑음</button>
+	<button onclick = "weather('cloud');">흐림</button>
+	<button onclick = "weather('cloud_sun');">맑고흐림</button>
+	<button onclick = "weather('snow');">눈</button>
+	<button onclick = "weather('rain');">비</button>
+	<p><img id="inline" src = "" width = "200"></img></p>
+	<hr>
+	
+	<h2>고전 이벤트 모델</h2>
+	<div class ="lastEvent">
+	<button>맑음</button>
+	<button>흐림</button>
+	<button>맑고흐림</button>
+	<button>눈</button>
+	<button>비</button>
+	<p><img class="last" src = "" width = "200"></img></p>
+	</div>
+	<hr>
+	
+	<h2>표준 이벤트 모델</h2>
+	<button>맑음</button>
+	<button>흐림</button>
+	<button>맑고흐림</button>
+	<button>눈</button>
+	<button>비</button>
+	<p><img class = "last" src ="" width = "200"></img></p>
+	<hr>
+	
+	
+</body>
+<script>
+//인라인
+function weather(name){
+	let inlineDom = document.getElementById('inline');
+	inlineDom.src = "../../images/"+name+".png";
+}
+//고전
+let dom = document.getElementsByTagName("button");
+let imgdom = document.getElementsByClassName("last");
+let weatherName = ["sun","cloud","cloud_sun","snow","rain"];
+for(let i=0 ; i<5 ; i++){
+	dom[i+5].onclick = function(){
+		imgdom[0].src = "../../images/"+weatherName[i]+".png";
+	}
+}
+//표준
+for(let i=0 ; i<5 ; i++){
+	dom[i+10].addEventListener('click',function(){
+		imgdom[1].src = "../../images/"+weatherName[i]+".png";
+	})
+}
+
+</script>
+</html>
