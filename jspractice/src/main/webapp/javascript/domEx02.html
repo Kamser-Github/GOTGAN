@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>버거킹 맛있는 메뉴</div>
+	<ul>
+	<li id = "1st">1등 통새우 와퍼</li>
+	<li id = "2nd">2등 갈릭 불고기 와퍼</li>
+	<li id = "3rd">3등 몬스터X</li>
+	<li id = "4th">4등 베이컨치즈와퍼</li>
+	<li id = "1st">5등 중복</li>
+	</ul>
+</body>
+<script>
+	//id값이 1st만 요소를 탐색하여 반환한다.
+	const $elem = document.getElementById('1st');
+	$elem.style.color = 'red';
+	//id값이 중복일 경우 첫번째의 것만 변경된다.
+	const $2nd = document.getElementById('2nd');
+	$2nd.style.backgroundColor = 'black';
+	//없는 요소를 찾는 경우
+	//const $non = document.getElementById('5th');
+	//$non.style.color = 'blue';
+	//null을 반환한다.
+</script>
+</html>

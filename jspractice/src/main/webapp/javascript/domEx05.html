@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>고전 이벤트 모델 연습</h1>
+	<button>현재 시간</button>
+	<div></div>
+</body>
+<script>
+	let dom = document.getElementsByTagName('button');
+	let domDiv = document.getElementsByTagName('div')[0];
+	dom[0].onclick = showTheTime;
+	function showTheTime(){
+		let date = new Date();
+		domDiv.innerHTML = "<h2>"+date.toLocaleTimeString()+"</h2>";
+		this.onclick = null;
+	}
+		
+
+</script>
+</html>

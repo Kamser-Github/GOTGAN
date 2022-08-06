@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>표준 이벤트 모델 연습(2)</h1>
+	<hr>
+	<button id="BeakJoon">백준 코딩테스트</button>
+	<button id="pro">프로그래머스 코딩테스트</button>
+	<button id="jungol">정올 코딩테스트</button>
+</body>
+<script>
+	let buttonDOM = document.getElementsByTagName('button');
+	for(let i=0 ; i<buttonDOM.length ; i++){
+		buttonDOM[i].addEventListener('click',function(){
+			//this.innerHTML += "사랑해";
+			//오타를 조심해야겠다.. herf로 30분을 고민했다.
+			switch(this.id){
+			case "BeakJoon":
+				location.href = "https://www.acmicpc.net/";
+				break;
+			case "pro":
+				location.href = "https://school.programmers.co.kr/learn/challenges";
+				break;
+			case "jungol":
+				location.href = "http://www.jungol.co.kr/";
+				break;
+			}			
+			//this.id == e.target.id;
+			//this 이벤트참조객체 그자체 인듯하다.
+		})
+	}
+</script>
+</html>
