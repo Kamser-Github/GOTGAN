@@ -64,7 +64,7 @@ public class BeakJoon1253 {
 		}
 		//정렬하기
 		Arrays.sort(arr);
-		//좋은수 개수 카운트
+		//좋은수 개수 카운트  
 		int count = 0;
 		
 		//for문
