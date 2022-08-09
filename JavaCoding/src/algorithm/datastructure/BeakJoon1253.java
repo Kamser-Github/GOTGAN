@@ -73,7 +73,7 @@ public class BeakJoon1253 {
 			int i=0;
 			//최대값(인덱스)
 			int j=N-1;
-			//좋은수
+			//좋은수.
 			long find = arr[k];
 			
 			while(i<j) {
