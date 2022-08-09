@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<span>아래가 인라인 모델</span>
+	<button onclick="sayClick('클릭')">버튼이니까</button>
+	<div id="divs">이미지야 나오렴 제발</div>
+	<hr>
+	<span>아래가 고전 모델</span>
+</body>
+<script>
+	
+	let domDiv = document.getElementById("divs");
+	function sayClick(string){
+		console.log(string);
+		window.alert(string);
+		let d = new Date();
+		domDiv.innerHTML = "<img src=/edu/images/10.jpg>";
+		//상대패스
+		//  / 최상위로 이동 예 / 하면 edu | jspractice로 간다
+		// ./ 현재 디렉토리 javascript가 된다.
+		// ../ 상위 디렉토리 webapp가 된다.
+		domDiv.open = "<img src=../images/3.jpg>";
+	}
+	
+	
+</script>
+</html>
