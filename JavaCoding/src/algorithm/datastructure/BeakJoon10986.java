@@ -9,7 +9,7 @@ public class BeakJoon10986 {
 
 		/*
 		 슈도코드 작성
-		 N 숫자의 개수 입력
+		 N 숫자의 개수 입력 
 		 M 나눌려는 수 입력
 		 int[] countNum에 나머지0값 저장
 		 (A+B)%C == 0;
