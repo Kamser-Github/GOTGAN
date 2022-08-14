@@ -1,8 +1,8 @@
 # GOTGAN
 
-+ JavaCoding/src/algorithm - 백준 알고리즘 공부
++ **JavaCoding/src/algorithm** - 백준 알고리즘 공부
 
-+ JavaIgnorance/src/ignorance  - 제대로 이해 안된거 책갈피
++ **JavaIgnorance/src/ignorance**  - 제대로 이해 안된거 책갈피
 
 + jspractice/src/main/webapp/javascript - 국비 프론트엔드 복습
 
